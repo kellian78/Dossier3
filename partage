@@ -1,0 +1,91 @@
+AUTOPSY
+
+télécharger le fichier d'installation Autopsy depuis le site officiel :
+curl -O https://www.sleuthkit.org/autopsy/autopsy-4.21.0.tar.gz
+
+Extraction dans le répertoire de votre choix en utilisant la commande tar :
+tar -xvzf autopsy-4.21.0.tar.gz
+
+Accés au répertoire nouvellement extrait :
+cd autopsy-4.21.0
+
+Assurez-vous d'avoir les autorisations d'exécution sur le fichier :
+chmod +x autopsy
+
+Exécuter Autopsy :
+./autopsy
+
+
+
+
+CHKROOTKIT
+apt-get update && apt-get install chkrootkit
+cd chkrootkit
+make sense
+cd ..
+mv chkrootkit /usr/local/bin/
+ln -sfv /usr/local/bin/chkrootkit/chkrootkit /usr/bin/
+/usr/sbin/chkrootkit
+
+
+
+
+OPENSNITCH
+ajouter le référentiel OpenSnitch à votre liste de sources logicielles :
+sudo add-apt-repository ppa:hungryhacker/opensnitch
+
+mettez à jour les informations des packages afin que votre système sache où trouver les packages d'OpenSnitch :
+sudo apt update
+Installer OpenSnitch :
+sudo apt install opensnitch
+
+Démarrer OpenSnitch :
+sudo opensnitch-ui
+
+
+
+
+ZEEK
+Téléchargement du code source :
+wget https://github.com/zeek/zeek/archive/master.tar.gz
+Extraction du code source :
+tar -xvzf master.tar.gz
+Installation des dépendances :
+sudo apt update
+sudo apt install cmake make gcc g++ flex bison libpcap-dev libssl-dev python3-dev swig zlib1g-dev
+Configuration et compilation :
+cd zeek-master
+./configure
+make
+Installation :
+sudo make install
+Vérification de l'installation :
+zeek -v
+
+
+
+
+AIRCRACK-NG
+Mise à jour des dépôts :
+sudo apt update
+sudo apt upgrade
+Installation d'Aircrack-ng :
+sudo apt install aircrack-ng
+Validation de l'installation :
+aircrack-ng –version
+
+
+
+
+LYNIS
+Téléchargement de Lynis :
+curl -O https://cisofy.com/files/lynis-3.0.0.tar.gz
+
+Extraction de l'archive :
+tar -xvzf lynis-3.0.0.tar.gz
+
+Accéder au répertoire Lynis :
+cd lynis-3.0.0
+
+Exécution de Lynis :
+sudo ./lynis audit system
